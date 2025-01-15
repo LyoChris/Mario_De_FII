@@ -1592,7 +1592,7 @@ void LevelCLearMenu() {
 			levelstats[i].time = (int)time_spent;
 		}
 	}
-	for (int i = 0;i < CUSTOM_LEVEL_ITEMS;i++) {
+	for (int i = 0;i < CUSTOM_LEVEL_ITEMS -1;i++) {
 		char str[50];
 		strcpy(str, customstats[i].disname);
 		strcat(str, ".txt");

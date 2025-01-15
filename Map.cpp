@@ -226,15 +226,17 @@ void MapLoaderNextRight() {
 				}
             }
             if (harta[i][j] == 12) {
-                putimage((j - nci) * wh, i * wh, pipebody, COPY_PUT);
-                //bar(j * wh, i * wh, (j + 1) * wh, (i + 1) * wh); // placeholder pentru pipe body
+                putimage(j * wh, i * wh, pipebody, COPY_PUT);
             }
-            if (harta[i][j] == 14 || harta[i - 1][j] == 12 || harta[i - 1][j] == 14 || harta[i - 1][j] == 13) {
-                putimage((j - nci) * wh, i * wh, pipehead, COPY_PUT);
-                //bar(j * wh, i * wh, (j + 1) * wh, (i + 1) * wh); // placeholder pentru pipe head without pirhana
+            if (harta[i][j] == 14) {
+                if (harta[i - 1][j] == 1 || harta[i - 1][j] == 12 || harta[i - 1][j] == 14 || harta[i - 1][j] == 13) {
+                    putimage(j * wh, i * wh, Rpipehead, COPY_PUT);
+                }
+                else {
+                    putimage(j * wh, i * wh, pipehead, COPY_PUT);
+                }
             }
             if (harta[i][j] == 13) {
-                putimage((j - nci) * wh, i * wh, pipehead, COPY_PUT);
                 p++;
                 piranav[p].ipinit = i;
                 piranav[p].jpinit = j;
@@ -242,9 +244,11 @@ void MapLoaderNextRight() {
                 piranav[p].jpirana = j;
                 if (harta[i - 1][j] == 1 || harta[i - 1][j] == 12 || harta[i - 1][j] == 14 || harta[i - 1][j] == 13) {
                     piranav[p].orientation = -1;
+                    putimage(j * wh, i * wh, Rpipehead, COPY_PUT);
                 }
                 else {
                     piranav[p].orientation = 1;
+                    putimage(j * wh, i * wh, pipehead, COPY_PUT);
                 }
                 piranav[p].mapart = (int)(nci - nc1);
             }
@@ -306,10 +310,6 @@ void MapLoaderNextRight() {
             jmario = ncf - nci + 2;
         }
         putimage((jmario - nci) * wh, imario * wh, mario_idle_right, COPY_PUT);
-        /*
-        imario = spawn[(int)(nci / nc1)].ibegin;
-        jmario = spawn[(int)(nci / nc1)].jbegin;
-		putimage((spawn[(int)(nci / nc1)].jbegin - nci) * wh, spawn[(int)(nci / nc1)].ibegin * wh, mario_idle_right, COPY_PUT);*/
     };
     setvisualpage(0);
 }
@@ -342,27 +342,40 @@ void MapLoaderPrevLeft() {
                 putimage((j-nci) * wh, i * wh, lucky_block, COPY_PUT);
             }
             if (harta[i][j] == 12) {
-                bar((j - nci) * wh, i * wh, (j - nci + 1) * wh, (i + 1) * wh); // placeholder pentru pipe body
+				putimage((j - nci) * wh, i * wh, pipebody, COPY_PUT);
+
+                //bar((j - nci) * wh, i * wh, (j - nci + 1) * wh, (i + 1) * wh); // placeholder pentru pipe body
             }
             if (harta[i][j] == 14) {
-                bar((j - nci) * wh, i * wh, (j - nci + 1) * wh, (i + 1) * wh); // placeholder pentru pipe head without pirhana
+				putimage((j - nci) * wh, i * wh, pipehead, COPY_PUT);
+               // bar((j - nci) * wh, i * wh, (j - nci + 1) * wh, (i + 1) * wh); // placeholder pentru pipe head without pirhana
             }
             if (harta[i][j] == 13) {
-                bar((j - nci) * wh, i * wh, (j - nci + 1) * wh, (i + 1) * wh); // placeholder pentru pipe head with pirhana
+				putimage((j - nci) * wh, i * wh, pipehead, COPY_PUT);
+                //bar((j - nci) * wh, i * wh, (j - nci + 1) * wh, (i + 1) * wh); // placeholder pentru pipe head with pirhana
             }
             if (harta[i][j] == 10) {
                 putimage((j-nci) * wh, i * wh, lucky_block_used, COPY_PUT);
             }
             if (harta[i][j] == 12) {
-                putimage((j - nci) * wh, i * wh, pipebody, COPY_PUT);
-                //bar(j * wh, i * wh, (j + 1) * wh, (i + 1) * wh); // placeholder pentru pipe body
+                putimage(j * wh, i * wh, pipebody, COPY_PUT);
             }
             if (harta[i][j] == 14) {
-                putimage((j - nci) * wh, i * wh, pipehead, COPY_PUT);
-                //bar(j * wh, i * wh, (j + 1) * wh, (i + 1) * wh); // placeholder pentru pipe head without pirhana
+                if (harta[i - 1][j] == 1 || harta[i - 1][j] == 12 || harta[i - 1][j] == 14 || harta[i - 1][j] == 13) {
+                    putimage(j * wh, i * wh, Rpipehead, COPY_PUT);
+                }
+                else {
+                    putimage(j * wh, i * wh, pipehead, COPY_PUT);
+                }
             }
             if (harta[i][j] == 13) {
-                putimage((j - nci) * wh, i * wh, pipehead, COPY_PUT);
+                if (harta[i - 1][j] == 1 || harta[i - 1][j] == 12 || harta[i - 1][j] == 14 || harta[i - 1][j] == 13) {
+                    putimage(j * wh, i * wh, Rpipehead, COPY_PUT);
+                }
+                else {
+                    putimage(j * wh, i * wh, pipehead, COPY_PUT);
+                }
+                piranav[p].mapart = (int)(nci - nc1);
             }
             
         }

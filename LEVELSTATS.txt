@@ -1,4 +1,4 @@
-level1.txt LEVEL 1% 3 7 21 1790
+level1.txt LEVEL 1% 2 7 29 1790
 level2.txt LEVEL 2% 0 0 0 0
 level3.txt LEVEL 3% 0 0 0 0
 level4.txt LEVEL 4% 0 0 0 0
