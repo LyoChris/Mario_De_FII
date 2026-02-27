@@ -1,6 +1,6 @@
 # Mario De FII
 
-A 2D Mario-inspired platformer written in C++ using the WinBGIm graphics stack and MiniAudio.
+A 2D Mario-inspired platformer written in C using the WinBGIm graphics stack and MiniAudio.
 
 The project includes:
 - a classic level campaign (`level1.txt` ... `level8.txt`)
@@ -211,17 +211,3 @@ Make sure those assets are present in the working directory alongside the execut
 - The project targets `Win32` in the provided `.vcxproj`.
 - A large global-state architecture is used across modules (`extern` variables), so behavior depends on initialization order.
 - The repository currently contains an old `README.html` from BGI docs; this `README.md` is the project-specific documentation.
-
----
-
-## Credits
-
-The in-game Credits screen lists contributors and acknowledgements.
-From `Menus.cpp` credits section, key names include:
-- Patranea Cosmin-Cristian
-- Iftimi George-Daniel
-
-If you plan to publish this repository publicly, consider expanding this section with:
-- contributor roles
-- license details for assets/sounds
-- third-party attributions for WinBGIm/MiniAudio and any external artwork/audio
